@@ -1,0 +1,37 @@
+<form novalidate autocomplete="off" #form="ngForm" (submit)="onSubmit(form)">
+    <div class="form-group">
+        <label for="">Ticker</label>
+        <input class="form-control form-control-lg" placeholder="Ticker"
+        name="Ticker" #Ticker="ngModel" [(ngModel)]="service.formData.Ticker"
+        required maxlength="4" minlength="2" [class.invalid]="Ticker.invalid && Ticker.touched">
+    </div>
+    <div class="form-group">
+        <label for="">Company Name</label>
+        <input class="form-control form-control-lg" placeholder="Company Name"
+        name="CompanyName" #CompanyName="ngModel" [(ngModel)]="service.formData.CompanyName"
+        required [class.invalid]="CompanyName.invalid && CompanyName.touched">
+    </div>
+    <div class="form-group">
+        <label for="">CEO Name & Board Members</label>
+        <input class="form-control form-control-lg" placeholder="Name Of Company CEO"
+        name="CEOName" #CEOName="ngModel" [(ngModel)]="service.formData.CEOName"
+        required [class.invalid]="CEOName.invalid && CEOName.touched">
+    </div>
+    <div class="form-row">
+    <div class="form-group col-md-6">
+        <label for="">Turnover</label>
+        <input class="form-control form-control-lg" placeholder="Turnover"
+        name="Turnover" #Turnover="ngModel" [(ngModel)]="service.formData.Turnover"
+        required [class.invalid]="Turnover.invalid && Turnover.touched">
+    </div>
+    <div class="form-group col-md-6">
+        <label for="">IPO Date</label>
+        <input class="form-control form-control-lg" placeholder="Date of Issue Of IPO"
+        name="IPODate" #IPODate="ngModel" [(ngModel)]="service.formData.IPODate"
+        required [class.invalid]="IPODate.invalid && IPODate.touched">
+    </div>
+    <div class="form-group">
+        <button clas="btn btn-info btn-lg btn-block" type="submit" [disabled]="form.invalid">Submit</button>
+    </div>
+</div>
+</form>
